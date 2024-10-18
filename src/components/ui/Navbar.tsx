@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Button from "./Button"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
 
 function Navbar() {
   return (
@@ -9,9 +10,14 @@ function Navbar() {
         <Link className="after:w-4 after:h-0.5 after:bg-slate-100" href="/">
           About Us
         </Link>
-        <Button variant="outline">
-          <Link href="/">Sign In</Link>
-        </Button>
+        <SignedOut>
+          <Button variant="outline">
+            <SignInButton />
+          </Button>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </nav>
     </header>
   )
