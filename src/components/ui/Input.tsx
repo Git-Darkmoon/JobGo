@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <div>
       <label
-        className="text-lg text-slate-600 font-medium"
+        className="text-lg text-slate-600 font-medium capitalize"
         htmlFor={id || name}
       >
         {label}

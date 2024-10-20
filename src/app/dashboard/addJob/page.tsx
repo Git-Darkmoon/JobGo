@@ -1,57 +1,80 @@
+import Button from "@/components/ui/Button"
 import Input from "@/components/ui/Input"
+import Select from "@/components/ui/Select"
 
 function AddJob() {
   return (
     <div className="w-full">
-      <h1 className="text-6xl text-center font-semibold italic text-slate-900 mb-3">
+      <h1 className="text-6xl text-center font-semibold italic text-slate-900 mb-1">
         Add Your Next Adventure
       </h1>
-      <p className="text-center text-lg">
+      <p className="text-center font-medium text-slate-500/90 text-lg">
         Start tracking your job applications effortlessly with JobGo. Let's get
         that dream job!
       </p>
 
-      <form action="" className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <form action="" className="grid grid-cols-2 lg:grid-cols-3 gap-6 py-12">
+        {/* ROLE */}
         <Input
-          label="Job Title"
-          id="jobTitle"
-          name="jobTitle"
+          label="Role / Job Title"
+          id="role"
+          name="role"
           required
           type="text"
-          placeholder="Software Engineer"
-          minLength={5}
-          maxLength={50}
+          placeholder="Sr Software Engineer"
+          minLength={4}
+          maxLength={30}
         />
+        {/* COMPANY */}
         <Input
-          label="Job Title"
-          id="jobTitle"
-          name="jobTitle"
+          label="company"
+          id="company"
+          name="company"
           required
           type="text"
-          placeholder="Software Engineer"
+          placeholder="EPAM Systems"
           minLength={5}
-          maxLength={50}
+          maxLength={25}
         />
+        {/* LOCATION */}
         <Input
-          label="Job Title"
-          id="jobTitle"
-          name="jobTitle"
+          label="location"
+          id="location"
+          name="location"
           required
           type="text"
-          placeholder="Software Engineer"
+          placeholder="USA, New York"
           minLength={5}
-          maxLength={50}
+          maxLength={30}
         />
-        <Input
-          label="Job Title"
-          id="jobTitle"
-          name="jobTitle"
+        {/* JOB STATUS */}
+        <Select
+          id="status"
           required
-          type="text"
-          placeholder="Software Engineer"
-          minLength={5}
-          maxLength={50}
+          label="status"
+          options={["interview", "pending", "rejected"]}
         />
+        {/* JOB MODALITY */}
+        <Select
+          id="modality"
+          required
+          label="modality"
+          options={["on-site", "hybrid", "remote"]}
+        />
+        {/* SALARY */}
+        <Input
+          label="Salary (monthly)"
+          id="salary"
+          name="salary"
+          required
+          type="number"
+          min={500}
+          max={5000}
+          placeholder="5000"
+        />
+        <Button variant="primary" type="submit">
+          Add Job
+        </Button>
       </form>
     </div>
   )
