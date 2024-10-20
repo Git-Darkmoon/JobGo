@@ -5,7 +5,7 @@ import Select from "@/components/ui/Select"
 function AddJob() {
   return (
     <div className="w-full">
-      <h1 className="text-6xl text-center font-semibold italic text-slate-900 mb-1">
+      <h1 className="text-6xl text-center font-semibold italic text-slate-900 mt-12 mb-1">
         Add Your Next Adventure
       </h1>
       <p className="text-center font-medium text-slate-500/90 text-lg">

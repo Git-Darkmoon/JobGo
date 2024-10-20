@@ -4,7 +4,7 @@ import Link from "next/link"
 
 function Sidebar() {
   return (
-    <aside className="hidden h-[calc(100dvh-4rem)] min-w-64 bg-primary lg:flex flex-col gap-12 py-6">
+    <aside className="hidden h-[calc(100dvh-4rem)] min-w-64 bg-primary lg:flex flex-col gap-12 py-12">
       <Link
         className="text-3xl w-full flex items-center gap-2 px-12 py-6 text-slate-950 italic hover:bg-slate-50 transition-colors"
         href={ROUTES.ADD_JOB}
