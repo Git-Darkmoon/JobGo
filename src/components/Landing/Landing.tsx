@@ -7,7 +7,7 @@ import Stats from "./Stats"
 function Landing() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Container>
         <Perks />

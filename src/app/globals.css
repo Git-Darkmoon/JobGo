@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply text-slate-900;
+}
+
 .video-docker video {
   top: 50%;
   left: 50%;
@@ -25,6 +29,10 @@
 
 .text-gradient-gray {
   @apply bg-gradient-to-br from-slate-700/50 via-slate-100 to-slate-50 text-transparent bg-clip-text;
+}
+
+.text-gradient-green {
+  @apply bg-gradient-to-br from-slate-800 via-green-900 to-slate-900 text-transparent bg-clip-text;
 }
 
 @layer utilities {
