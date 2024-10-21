@@ -35,10 +35,10 @@ async function AllJobs() {
         <p className="text-green-600 font-bold text-base">
           Stay on Top of Your Job Hunt
         </p>
-        <h2 className="text-6xl tracking-tight font-bold mt-2 mb-6 ">
+        <h2 className="text-6xl font-redHat tracking-tight font-extrabold mt-2 mb-6 ">
           Your Job Applications
         </h2>
-        <p className="text-slate-700 font-semibold">
+        <p className="text-slate-700 font-redHat font-semibold">
           Here's a detailed list of all the jobs you've applied to. Keep track
           of your progress and stay organized
         </p>
