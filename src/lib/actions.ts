@@ -4,7 +4,6 @@ import db from "@/lib/db"
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 import { jobSchema, validateWithZodSchema } from "./schemas"
-import { toast } from "sonner"
 import { ROUTES } from "./routes"
 
 const getAuthUser = async () => {
