@@ -26,7 +26,7 @@ export default function VaulDrawer() {
               <ul>
                 <li>
                   <Link
-                    className=" text-3xl w-full flex items-center gap-2 px-12 py-6 text-slate-950 italic hover:bg-slate-50 transition-colors"
+                    className="border-b border-slate-300 text-3xl w-full flex items-center gap-2 px-12 py-6 text-slate-950 italic hover:bg-slate-50 transition-colors"
                     href={ROUTES.ADD_JOB}
                   >
                     <PlusIcon className="text-slate-800" strokeWidth={2.5} />
@@ -37,7 +37,7 @@ export default function VaulDrawer() {
                 </li>
                 <li>
                   <Link
-                    className="text-3xl w-full flex items-center gap-2 px-12 py-6 text-slate-950 italic hover:bg-slate-50 transition-colors"
+                    className="border-b border-slate-300 text-3xl w-full flex items-center gap-2 px-12 py-6 text-slate-950 italic hover:bg-slate-50 transition-colors"
                     href={ROUTES.ALL_JOBS}
                   >
                     <BriefcaseIcon
@@ -62,56 +62,6 @@ export default function VaulDrawer() {
                   </Link>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div className="p-4 bg-gray-100 border-t border-gray-200 mt-auto">
-            <div className="flex gap-6 justify-end max-w-md mx-auto">
-              <a
-                className="text-xs text-gray-600 flex items-center gap-0.25"
-                href="https://github.com/emilkowalski/vaul"
-                target="_blank"
-              >
-                GitHub
-                <svg
-                  fill="none"
-                  height="16"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  aria-hidden="true"
-                  className="w-3 h-3 ml-1"
-                >
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                </svg>
-              </a>
-              <a
-                className="text-xs text-gray-600 flex items-center gap-0.25"
-                href="https://twitter.com/emilkowalski_"
-                target="_blank"
-              >
-                Twitter
-                <svg
-                  fill="none"
-                  height="16"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  aria-hidden="true"
-                  className="w-3 h-3 ml-1"
-                >
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                </svg>
-              </a>
             </div>
           </div>
         </Drawer.Content>

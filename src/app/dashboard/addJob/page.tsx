@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button"
 import Input from "@/components/ui/Input"
 import Select from "@/components/ui/Select"
+import { createJobAction } from "@/lib/actions"
 
 function AddJob() {
   return (
@@ -13,7 +14,10 @@ function AddJob() {
         that dream job!
       </p>
 
-      <form action="" className="grid grid-cols-2 lg:grid-cols-3 gap-6 py-12">
+      <form
+        action={createJobAction}
+        className="grid grid-cols-2 lg:grid-cols-3 gap-6 py-12"
+      >
         {/* ROLE */}
         <Input
           label="Role / Job Title"
@@ -50,6 +54,7 @@ function AddJob() {
         {/* JOB STATUS */}
         <Select
           id="status"
+          name="status"
           required
           label="status"
           options={["interview", "pending", "rejected"]}
@@ -57,6 +62,7 @@ function AddJob() {
         {/* JOB MODALITY */}
         <Select
           id="modality"
+          name="modality"
           required
           label="modality"
           options={["on-site", "hybrid", "remote"]}

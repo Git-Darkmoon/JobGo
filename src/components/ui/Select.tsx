@@ -4,10 +4,11 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   id: string
   options: string[]
   label: string
+  name: string
   required?: boolean
 }
 
-function Select({ id, options, label, required, ...rest }: SelectProps) {
+function Select({ id, options, label, required, name, ...rest }: SelectProps) {
   return (
     <div>
       <label
@@ -19,6 +20,7 @@ function Select({ id, options, label, required, ...rest }: SelectProps) {
       <select
         id={id}
         required={required}
+        name={name}
         {...rest}
         className="block w-full p-3 border border-slate-300 rounded-md"
       >
