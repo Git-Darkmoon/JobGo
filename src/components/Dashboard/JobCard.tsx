@@ -37,7 +37,7 @@ function JobCard({
                 </h3>
               </div>
             </div>
-            {/* TODO: Badge component */}
+            {/* TODO: Badge component and its features */}
             <span className="px-3 py-1 text-sm font-medium rounded-full bg-primary/50 text-green-700 ">
               {status}
             </span>
