@@ -1,6 +1,8 @@
 import { SignedIn, UserButton } from "@clerk/nextjs"
 import { currentUser } from "@clerk/nextjs/server"
 import VaulDrawer from "@/components/ui/VaulDrawer"
+import Link from "next/link"
+import { ROUTES } from "@/lib/routes"
 
 async function Navbar() {
   const user = await currentUser()
@@ -11,9 +13,14 @@ async function Navbar() {
         <div className="cursor-pointer lg:hidden">
           <VaulDrawer />
         </div>
-        <h2>
-          Job<span className="text-gradient-green">Go</span>
-        </h2>
+        <Link
+          className="decoration-slate-100 hover:underline underline-offset-4"
+          href={ROUTES.HOME}
+        >
+          <h2>
+            Job<span className="text-gradient-green">Go</span>
+          </h2>
+        </Link>
       </div>
       <div className="flex items-center gap-4">
         <p className="font-semibold text-gradient-green">

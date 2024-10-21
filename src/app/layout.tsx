@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 import Providers from "./providers"
+import NextTopLoader from "nextjs-toploader"
 
 const RedHat = localFont({
   variable: "--font-redhat",
@@ -53,7 +54,11 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body className={`${RedHat.variable} antialiased`}>{children}</body>
+        <body className={`${RedHat.variable} antialiased`}>
+          <NextTopLoader color="#daffed" height={5} />
+
+          {children}
+        </body>
       </html>
     </Providers>
   )

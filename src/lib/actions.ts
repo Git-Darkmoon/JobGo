@@ -4,6 +4,8 @@ import db from "@/lib/db"
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 import { jobSchema, validateWithZodSchema } from "./schemas"
+import { toast } from "sonner"
+import { ROUTES } from "./routes"
 
 const getAuthUser = async () => {
   const user = await currentUser()
@@ -12,16 +14,26 @@ const getAuthUser = async () => {
   return user
 }
 
-export const createJobAction = async (formData: FormData) => {
+const renderError = (
+  error: unknown
+): {
+  message: string
+} => {
+  console.log(error)
+  return {
+    message: error instanceof Error ? error.message : "there was an error...",
+  }
+}
+
+export const createJobAction = async (
+  prevState: any,
+  formData: FormData
+): Promise<{ message: string }> => {
   const user = await getAuthUser()
-  console.log(Object.fromEntries(formData))
 
   try {
     const rawData = Object.fromEntries(formData)
     const validatedFields = validateWithZodSchema(jobSchema, rawData)
-
-    console.log(rawData)
-    console.log(validatedFields)
 
     await db.job.create({
       data: {
@@ -29,9 +41,22 @@ export const createJobAction = async (formData: FormData) => {
         clerkId: user.id,
       },
     })
-    console.log("Job created")
   } catch (error) {
-    console.log(error)
+    return renderError(error)
   }
-  redirect("/")
+  redirect(ROUTES.ALL_JOBS)
+}
+
+export const fetchAllJobs = async () => {
+  const user = await getAuthUser()
+
+  try {
+    return db.job.findMany({
+      where: {
+        clerkId: user.id,
+      },
+    })
+  } catch (error) {
+    return renderError(error)
+  }
 }

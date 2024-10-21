@@ -1,4 +1,8 @@
+"use client"
+
 import { cva } from "class-variance-authority"
+import { Loader2Icon } from "lucide-react"
+import { useFormStatus } from "react-dom"
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: "primary" | "outline" | "ghost"
@@ -10,15 +14,32 @@ export default function Button({
   children,
   ...props
 }: ButtonProps): JSX.Element {
+  const { pending } = useFormStatus()
+
   return (
-    <button {...props} className={buttonVariants({ variant })}>
-      {children}
+    <button
+      {...props}
+      disabled={pending}
+      className={buttonVariants({ variant })}
+    >
+      {pending ? (
+        <p>
+          <span className="animate-pulse flex items-center justify-between gap-2">
+            Loading...
+            <span>
+              <Loader2Icon className="animate-spin" />
+            </span>
+          </span>
+        </p>
+      ) : (
+        children
+      )}
     </button>
   )
 }
 
 const buttonVariants = cva(
-  "py-2 px-4 rounded-md font-semibold text-lg hover:scale-105 transition-all",
+  "py-2 px-4 rounded-md font-semibold text-lg hover:scale-105 transition-all disabled:cursor-not-allowed disabled:opacity-50 ",
   {
     variants: {
       variant: {

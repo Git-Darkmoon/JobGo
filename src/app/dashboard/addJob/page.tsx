@@ -1,4 +1,7 @@
+"use client"
+
 import Button from "@/components/ui/Button"
+import FormContainer from "@/components/ui/FormContainer"
 import Input from "@/components/ui/Input"
 import Select from "@/components/ui/Select"
 import { createJobAction } from "@/lib/actions"
@@ -14,9 +17,9 @@ function AddJob() {
         that dream job!
       </p>
 
-      <form
+      <FormContainer
         action={createJobAction}
-        className="grid grid-cols-2 lg:grid-cols-3 gap-6 py-12"
+        className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-10 p-5 rounded-md shadow-md bg-white"
       >
         {/* ROLE */}
         <Input
@@ -26,7 +29,7 @@ function AddJob() {
           required
           type="text"
           placeholder="Sr Software Engineer"
-          minLength={4}
+          minLength={3}
           maxLength={30}
         />
         {/* COMPANY */}
@@ -37,7 +40,7 @@ function AddJob() {
           required
           type="text"
           placeholder="EPAM Systems"
-          minLength={5}
+          minLength={1}
           maxLength={25}
         />
         {/* LOCATION */}
@@ -47,7 +50,7 @@ function AddJob() {
           name="location"
           required
           type="text"
-          placeholder="USA, New York"
+          placeholder="New York, USA"
           minLength={5}
           maxLength={30}
         />
@@ -75,13 +78,13 @@ function AddJob() {
           required
           type="number"
           min={500}
-          max={5000}
+          max={10000}
           placeholder="5000"
         />
         <Button variant="primary" type="submit">
           Add Job
         </Button>
-      </form>
+      </FormContainer>
     </div>
   )
 }
