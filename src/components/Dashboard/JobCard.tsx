@@ -7,6 +7,7 @@ import {
   MapPinIcon,
 } from "lucide-react"
 import Link from "next/link"
+import StatusBadge from "./StatusBadge"
 
 function JobCard({
   id,
@@ -18,6 +19,7 @@ function JobCard({
   salary,
 }: Job) {
   return (
+    // TODO: Add edit / delete functionality in the page of each job
     <Link href={`/jobs/${id}`}>
       <article className="bg-white shadow-sm border-b border-slate-300/50 py-6 px-4 rounded-lg hover:bg-primary/15 hover:scale-105 transition-all">
         <header>
@@ -37,10 +39,7 @@ function JobCard({
                 </h3>
               </div>
             </div>
-            {/* TODO: Badge component and its features */}
-            <span className="px-3 py-1 text-sm font-medium rounded-full bg-primary/50 text-green-700 ">
-              {status}
-            </span>
+            <StatusBadge status={status} />
           </div>
         </header>
         <div className="text-sm text-slate-700 mt-4 flex flex-wrap items-center gap-4">
