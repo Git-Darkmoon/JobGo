@@ -13,8 +13,8 @@ function AddJob() {
         Add Your Next Adventure
       </h1>
       <p className="text-center font-medium text-slate-500/90 text-lg">
-        Start tracking your job applications effortlessly with JobGo. Let's get
-        that dream job!
+        Start tracking your job applications effortlessly with JobGo. Let&apos;s
+        get that dream job!
       </p>
 
       <FormContainer

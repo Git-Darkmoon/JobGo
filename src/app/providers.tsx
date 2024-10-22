@@ -1,5 +1,4 @@
 import { ClerkProvider } from "@clerk/nextjs"
-import NextTopLoader from "nextjs-toploader"
 import { Toaster } from "sonner"
 
 function Providers({ children }: { children: React.ReactNode }) {

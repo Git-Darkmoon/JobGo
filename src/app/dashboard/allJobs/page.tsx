@@ -13,7 +13,7 @@ async function AllJobs() {
     return (
       <div className="select-none w-full flex flex-col items-center justify-center gap-6 mt-12">
         <p className="text-slate-500 font-semibold text-xl">
-          You haven't added any job yet. Start by adding new jobs
+          You haven&apos;t added any job yet. Start by adding new jobs
         </p>
         <Link href={ROUTES.ADD_JOB}>
           <Button variant="primary">Add a Job</Button>
@@ -39,8 +39,8 @@ async function AllJobs() {
           Your Job Applications
         </h2>
         <p className="text-slate-700 font-redHat font-semibold">
-          Here's a detailed list of all the jobs you've applied to. Keep track
-          of your progress and stay organized
+          Here&apos;s a detailed list of all the jobs you&apos;ve applied to.
+          Keep track of your progress and stay organized
         </p>
       </header>
       <section className="mt-6 flex flex-col gap-5">

@@ -25,7 +25,7 @@ const renderError = (
 }
 
 export const createJobAction = async (
-  prevState: any,
+  prevState: unknown,
   formData: FormData
 ): Promise<{ message: string }> => {
   const user = await getAuthUser()

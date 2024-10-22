@@ -42,7 +42,10 @@ function Perks() {
         {perks.map((perk) => {
           const { name, description } = perk
           return (
-            <div className="shadow-md rounded-md border border-slate-300/40 py-4 px-6 group flex flex-col items-center justify-center gap-2">
+            <div
+              key={name}
+              className="shadow-md rounded-md border border-slate-300/40 py-4 px-6 group flex flex-col items-center justify-center gap-2"
+            >
               <perk.icon className="text-primary" size={36} />
               <h3 className="text-3xl text-slate-900 font-bold italic capitalize">
                 {name}
