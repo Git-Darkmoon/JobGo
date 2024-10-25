@@ -8,7 +8,7 @@ async function Navbar() {
   const user = await currentUser()
 
   return (
-    <header className="h-16 w-full bg-primary z-10 flex items-center justify-between px-12 text-slate-100">
+    <header className="h-16 w-full bg-primary z-10 flex items-center justify-between px-3 lg:px-12 text-slate-100">
       <div className="text-4xl font-bold italic flex items-center gap-6">
         <div className="cursor-pointer lg:hidden">
           <VaulDrawer />

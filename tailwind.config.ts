@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#28d768",
+        primary: "#1CBB5C",
       },
       fontFamily: {
         redHat: ["var(--font-redhat)"],

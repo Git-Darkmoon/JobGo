@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "@/lib/utils"
 import { cva } from "class-variance-authority"
 import { Loader2Icon } from "lucide-react"
 import { useFormStatus } from "react-dom"
@@ -12,6 +13,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export default function Button({
   variant,
   children,
+  className,
   ...props
 }: ButtonProps): JSX.Element {
   const { pending } = useFormStatus()
@@ -20,7 +22,7 @@ export default function Button({
     <button
       {...props}
       disabled={pending}
-      className={buttonVariants({ variant })}
+      className={cn(buttonVariants({ variant }), className)}
     >
       {pending ? (
         <p>

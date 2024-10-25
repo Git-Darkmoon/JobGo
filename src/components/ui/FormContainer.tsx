@@ -16,7 +16,7 @@ function FormContainer({
 }: {
   action: actionFunction
   children: React.ReactNode
-  className: string
+  className?: string
 }) {
   const [state, formAction] = useFormState(action, initialState)
   useEffect(() => {
