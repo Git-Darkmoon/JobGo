@@ -62,6 +62,21 @@ export const fetchAllJobs = async () => {
   }
 }
 
+export const fetchJobData = async (jobId: string) => {
+  const user = await getAuthUser()
+
+  try {
+    return db.job.findFirst({
+      where: {
+        id: jobId,
+        clerkId: user.id,
+      },
+    })
+  } catch (error) {
+    renderError(error)
+  }
+}
+
 export const deleteJobAction = async (prevState: { jobId: string }) => {
   const { jobId } = prevState
 
@@ -74,6 +89,28 @@ export const deleteJobAction = async (prevState: { jobId: string }) => {
 
     // revalidatePath("/dashboard/allJobs")
     // return { message: "job removed" }
+  } catch (error) {
+    return renderError(error)
+  }
+  redirect("/dashboard/allJobs")
+}
+
+export const updateJobAction = async (
+  jobId: string,
+  formData: FormData
+): Promise<{ message: string }> => {
+  try {
+    const rawData = Object.fromEntries(formData)
+    const validatedFields = validateWithZodSchema(jobSchema, rawData)
+
+    await db.job.update({
+      where: {
+        id: jobId,
+      },
+      data: {
+        ...validatedFields,
+      },
+    })
   } catch (error) {
     return renderError(error)
   }

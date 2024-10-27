@@ -10,6 +10,7 @@ import { Job } from "@prisma/client"
 import Button from "../ui/Button"
 import FormContainer from "../ui/FormContainer"
 import { deleteJobAction } from "@/lib/actions"
+import EditButton from "./EditButton"
 
 function JobCard({
   id,
@@ -63,9 +64,7 @@ function JobCard({
           </div>
         </div>
         <div className="flex justify-end gap-4 mt-4">
-          <Button variant="primary" className="text-slate-100">
-            Edit
-          </Button>
+          <EditButton jobId={id} />
           <DeleteJob jobId={id} />
         </div>
       </article>
