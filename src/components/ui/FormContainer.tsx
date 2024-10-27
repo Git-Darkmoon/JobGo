@@ -19,8 +19,11 @@ function FormContainer({
   className?: string
 }) {
   const [state, formAction] = useFormState(action, initialState)
+
+  console.log(state)
+
   useEffect(() => {
-    if (state.message) {
+    if (state?.message) {
       toast.info(state.message)
     }
   }, [state])

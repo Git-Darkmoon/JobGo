@@ -43,11 +43,11 @@ async function AllJobs() {
           Keep track of your progress and stay organized
         </p>
       </header>
-      <section className="mt-6 flex flex-col gap-5">
+      <div className="mt-6 flex flex-col gap-5">
         {allJobs.map((job) => {
           return <JobCard {...job} key={job.id} />
         })}
-      </section>
+      </div>
     </div>
   )
 }

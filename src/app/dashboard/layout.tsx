@@ -8,10 +8,10 @@ function layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <section className="flex">
+      <div className="flex">
         <Sidebar />
         <Container>{children}</Container>
-      </section>
+      </div>
     </>
   )
 }
